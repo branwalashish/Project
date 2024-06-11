@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
-struct library{
+struct library
+{
     char book[100];
     char atnm[100];
     char title[100];
@@ -10,46 +11,44 @@ struct library{
 int main()
 {
     struct library b[100];
-    char input, input2, book[100], autor[100], title[100];
+    char input, input2, book[100], author[100], title[100];
     int i, nm, pos;
 
-    while(1)
+    while (1)
     {
-        printf("\n\n|%-40s|"," Ashish Kumar's Library " );
-    }
-    printf("\nEnter the Character (Q to Quit....)\n1. Add a Book\n2. Delete a book\n 3. Find a Book\n4. Update a Book/author/title\n5. Show all books\n //Enter : ");
-    scanf("%c", &input);
+        printf("\n\n|%-40s |", "  SNEHA BARNWAL  LIBRARY ");
+        printf("\nEnter the character (Q to quit ...)\n  1. Add a book\n  2. Delete a Book\n  3. Find a Book\n  4. Update a Book / author / title\n  5. Show all books\n //Enter : ");
+        scanf(" %c", &input);
 
-    switch(input)
-    {
+        switch (input)
+        {
         case 'Q':
-        printf("Exiting the Program....");
-        goto end;
+            printf("Quitting the program.....");
+            goto end;
 
         case '1':
-        // Adding books in library
-        printf("How many books you want to add: ");
-        scanf("%d", &nm);
-        // Note :  instead of %s.
-        // The %[^\n]{scanset specifier} specifier reads a string until a newline character
-        // is encountered, allowing spaces in the input.
-        for(int i = 0; i<nm; i++){
-            
-            printf("\n%d Book name: ", i+1);
-            scanf("%[^\n]",b[i].book);
-            printf("%d Author name: ", i+1);
-            scanf("%[^\n]",b[i].atnm);
-            printf("%d Title name: ", i + 1);
-            scanf(" %[^\n]", b[i].title);
-            printf("\n\n"); // spaces between each book entry
+            // Adding books in liberary
+            printf("How many books you want to add: ");
+            scanf("%d", &nm);
+            // Note :  instead of %s.
+            // The %[^\n]{scanset specifier} specifier reads a string until a newline character
+            // is encountered, allowing spaces in the input.
+            for (i = 0; i < nm; i++)
+            {
+                printf("\n%d Book name: ", i + 1);
+                scanf(" %[^\n]", b[i].book);
+                printf("%d Author name: ", i + 1);
+                scanf(" %[^\n]", b[i].atnm);
+                printf("%d Title name: ", i + 1);
+                scanf(" %[^\n]", b[i].title);
+                printf("\n\n"); // spaces between each book entry
+            }
+            printf(" \n\n%d BOOKS ADDED IN LIBERARY......", nm);
+            printf("\n\n");
+            break;
 
-        }
-        printf(" \n\n%d BOOKS ADDED IN THE LIBRARY.......", nm);
-        printf("\n\n");
-        break;
-
-        case '2' :
-         // code to delete a book
+        case '2':
+            // code to delete a book
             printf("enter Position of  book to delete: ");
             scanf("%d", &pos);
             for (i = pos - 1; i < nm - 1; i++)
@@ -62,7 +61,7 @@ int main()
             printf("\n\n  %d POSITION BOOK IS DELETED.... \n\n   ", pos);
             break;
 
-            case '3':
+        case '3':
             // code for finding a book
             printf("please enter which book to find: ");
             char m[100];                
@@ -86,8 +85,9 @@ int main()
         case '4':
             // code for updating a book
             printf("which one you want to update \n a. update a book\n b. update an author name \n c. update a title name\n");
-            scanf(" %c", &input2);   
-         switch (input2)
+            scanf(" %c", &input2);
+
+            switch (input2)
             {
             case 'a':
                 printf("enter which book to find : ");
@@ -126,6 +126,7 @@ int main()
                     printf("Author name not found!\n\n\n");
                 }
                 break;
+
             case 'c':
                 printf("enter which Title to find : ");
                 scanf(" %[^\n]", &title);
@@ -143,7 +144,7 @@ int main()
                 {
                     printf("title not found!\n\n\n");
                 }
-                break; 
+                break;
 
             default:
                 printf("Invalid input!!. \n");
@@ -151,7 +152,7 @@ int main()
             }
             break;
 
-            case '5':
+        case '5':
             // Show a book
             printf("\n\n\n");
             printf("| %-30s | %-30s | %-30s |\n", "BOOK NAME", "AUTHOR NAME", "TITLE NAME");
@@ -168,7 +169,7 @@ int main()
             break;
         }
     }
-    
+
 end:
     return 0;
-    }
+}

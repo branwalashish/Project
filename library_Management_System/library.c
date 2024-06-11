@@ -16,7 +16,7 @@ int main()
 
     while (1)
     {
-        printf("\n\n|%-40s |", "  SNEHA BARNWAL  LIBRARY ");
+        printf("\n\n|%-40s |", "  Ashish LIBRARY ");
         printf("\nEnter the character (Q to quit ...)\n  1. Add a book\n  2. Delete a Book\n  3. Find a Book\n  4. Update a Book / author / title\n  5. Show all books\n //Enter : ");
         scanf(" %c", &input);
 

@@ -27,7 +27,7 @@ int main()
             goto end;
 
         case '1':
-            // Adding books in liberary
+            // Adding books in library
             printf("How many books you want to add: ");
             scanf("%d", &nm);
             // Note :  instead of %s.
